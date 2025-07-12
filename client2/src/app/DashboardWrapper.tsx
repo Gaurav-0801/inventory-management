@@ -4,13 +4,12 @@ import React, { useEffect, useState } from "react"
 
 import Sidebar from "./(components)/Sidebar"
 import StoreProvider from "@/app/redux"
-import { useTheme } from "next-themes"
 import { useAppSelector } from "@/app/redux"
 import { Navbar } from "./(components)/Navbar"
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const isSidebarCollapsed = useAppSelector((state) => state.global.isSidebarCollapsed)
-  const { theme } = useTheme()
+  
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
